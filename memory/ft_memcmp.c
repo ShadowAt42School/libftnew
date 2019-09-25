@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../headers/libft.h"
 
 static int		calc_difference(const void *str1, const void *str2, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/01 20:33:02 by maghayev          #+#    #+#             */
-/*   Updated: 2018/02/02 08:05:35 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/09/24 20:02:25 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../headers/get_next_line.h"
 
 t_bool		clean_up(t_linemeta *lnmeta)
 {

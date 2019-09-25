@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../headers/libft.h"
 
 void	ft_lstaddend(t_list **alst, t_list *new_lst)
 {

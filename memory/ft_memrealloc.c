@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../headers/libft.h"
 
 void	*ft_memrealloc(void *content, size_t cur_size, size_t des_size)
 {

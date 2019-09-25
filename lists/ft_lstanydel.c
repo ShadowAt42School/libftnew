@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../headers/libft.h"
 
 t_list	*ft_lstanydel(t_list *head, t_list *nd)
 {

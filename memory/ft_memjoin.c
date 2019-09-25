@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../headers/libft.h"
 
 void	*ft_memjoin(void *sh, const void *sn, size_t shl, size_t snh)
 {

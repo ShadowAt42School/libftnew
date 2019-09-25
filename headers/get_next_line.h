@@ -6,13 +6,13 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 04:23:10 by maghayev          #+#    #+#             */
-/*   Updated: 2019/09/24 19:37:05 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/09/24 20:02:33 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# include "../libft.h"
+# include "libft.h"
 # include <fcntl.h>
 
 # define BUFF_SIZE 10
