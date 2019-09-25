@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2018/02/05 23:32:31 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/09/24 20:55:33 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,12 @@ int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_isalnum(int c);
+
+/**
+**	Math
+*/
+int				ft_floorsqrt(int toroot);
+int				ft_pow(int num1, int power);
 
 /*
 ** Lists
