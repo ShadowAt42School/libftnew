@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/09/24 20:55:33 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/09/29 21:56:38 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,34 @@ typedef struct	s_list
 ** Casts
 ** Macroses Part 1
 */
-# define LINTP(x) ((long int*)x)
-# define INTP(x) ((int*)x)
-# define SINTP(x) ((short int*)x)
 # define CHRP(x) ((char*)x)
+# define SINTP(x) ((short int*)x)
+# define INTP(x) ((int*)x)
+# define LINTP(x) ((long int*)x)
+# define LLINTP(x) ((long long int*)x)
+# define UCHRP(x) ((unsigned char*)x)
+# define USHINTP(x) ((unsigned short int*)x)
+# define UINTP(x) ((unsigned int*)x)
+# define ULINTP(x) ((unsigned long int*)x)
+# define ULLINTP(x) ((unsigned long long int*)x)
+# define CHRD(x) ((char)x)
+# define SHINTD(x) ((short int)x)
+# define INTD(x) ((int)x)
+# define LINTD(x) ((long int)x)
+# define LLINTD(x) ((long long int)x)
+# define UCHRD(x) ((unsigned char)x)
+# define USHINTD(x) ((unsigned short int)x)
+# define UINTD(x) ((unsigned int)x)
+# define ULINTD(x) ((unsigned long int)x)
+# define ULLINTD(x) ((unsigned long long int)x)
+# define DOUBLE(x) ((double)x)
+# define LDOUBLE(x) ((long double)x)
 
 /*
 ** Sizes
 ** Macroses Part 2
 */
+# define LLIS sizeof(long long int)
 # define LIS sizeof(long int)
 # define LS sizeof(long)
 # define IS sizeof(int)
@@ -111,6 +130,8 @@ int				ft_strwordsdelim(const char *str, char delim);
 int				ft_strlendelim(const char *str, char delim);
 char			*ft_strdupdelim(const char *s1, char delim);
 char			*ft_strtrimdelim(char const *s, char delim);
+int				ft_strnumlen(char *str);
+int				ft_strnumlen_inplace(const char **str);
 
 /*
 ** Convertions
