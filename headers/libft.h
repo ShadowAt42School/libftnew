@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/09/29 21:56:38 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/10/01 20:27:20 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 ** Type defs
 */
 typedef	unsigned char	t_byte;
-typedef unsigned int	t_bool;
+typedef unsigned char	t_bool;
 
 typedef struct	s_list
 {
