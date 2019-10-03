@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/10/01 20:27:20 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/10/02 21:22:06 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,7 @@ char			*ft_strdupdelim(const char *s1, char delim);
 char			*ft_strtrimdelim(char const *s, char delim);
 int				ft_strnumlen(char *str);
 int				ft_strnumlen_inplace(const char **str);
+int				ft_strdelim(char **dest, const char *s1, char delim);
 
 /*
 ** Convertions
