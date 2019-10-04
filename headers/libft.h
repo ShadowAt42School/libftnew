@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/10/02 21:22:06 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/10/03 21:46:22 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,6 +187,8 @@ int				ft_isalnum(int c);
 */
 int				ft_floorsqrt(int toroot);
 int				ft_pow(int num1, int power);
+unsigned int	ft_numlen(long long int number);
+unsigned int	ft_unumlen(unsigned long long int number);
 
 /*
 ** Lists
