@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/10/03 21:46:22 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/10/06 23:19:21 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,11 @@ typedef struct	s_list
 ** Pre-Def values
 ** Macroses Part 0
 */
-# define INT_MIN_STR "-2147483648"
-# define INT_MAX_STR "2147483647"
+# define INT_MIN_STR 	"-2147483648"
+# define INT_MAX_STR 	"2147483647"
+# define LLINT_MIN_STR 	"-9223372036854775808"
+# define LLINT_MAX_STR 	"9223372036854775807"
+# define ULLINT_MAX_STR "18446744073709551615"
 # define TRUE 1
 # define FALSE 0
 
@@ -139,8 +142,11 @@ int				ft_strdelim(char **dest, const char *s1, char delim);
 */
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+void			ft_str_tolower(char *str);
 int				ft_atoi(const char *str);
 char			*ft_itoa(int n);
+unsigned int	ft_itoa_base(
+						char *str, void *number, int base, t_bool is_signed);
 
 /*
 **	System Writes
@@ -187,14 +193,14 @@ int				ft_isalnum(int c);
 */
 int				ft_floorsqrt(int toroot);
 int				ft_pow(int num1, int power);
-unsigned int	ft_numlen(long long int number);
-unsigned int	ft_unumlen(unsigned long long int number);
+unsigned int	ft_numlen(void *number, t_bool is_signed);
 
 /*
 ** Lists
 */
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstadd(t_list **alst, t_list *new_lst);
+void			ft_lstaddend(t_list **alst, t_list *new_lst);
 void			ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));

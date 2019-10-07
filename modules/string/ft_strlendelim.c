@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 21:54:50 by maghayev          #+#    #+#             */
-/*   Updated: 2018/01/04 23:30:50 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/10/06 23:13:45 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_strlendelim(const char *str, char delim)
 	len = 0;
 	if (!str)
 		return (0);
-	while (*str != delim)
+	while (*str && *str != delim)
 	{
 		len++;
 		str++;
