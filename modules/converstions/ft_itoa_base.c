@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 02:54:47 by maghayev          #+#    #+#             */
-/*   Updated: 2019/10/06 22:51:55 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/10/10 21:06:32 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,10 @@ unsigned int			ft_itoa_base(
 	else
 		ullin = *ULLINTP(number);
 	if (llin == LLONG_MIN)
-		ft_memcpy(str, LLINT_MIN_STR, ft_strlen(LLINT_MIN_STR));
+		return
+		(ft_strlen(ft_memcpy(str, LLINT_MIN_S, ft_strlen(LLINT_MIN_S))) - 1);
 	if (llin == LLONG_MAX && is_signed && base == 10)
-		ft_memcpy(str, LLINT_MAX_STR, ft_strlen(LLINT_MAX_STR));
+		return (ft_strlen(ft_memcpy(str, LLINT_MAX_S, ft_strlen(LLINT_MAX_S))));
 	else if (llin == 0 && ullin == 0 && ft_memcpy(str, "0", 1))
 		return (1);
 	else
