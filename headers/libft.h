@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/10/06 23:19:21 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/11/07 17:35:19 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,6 +199,7 @@ unsigned int	ft_numlen(void *number, t_bool is_signed);
 ** Lists
 */
 t_list			*ft_lstnew(void const *content, size_t content_size);
+t_list			*ft_lstnewp(void const *content, size_t content_size);
 void			ft_lstadd(t_list **alst, t_list *new_lst);
 void			ft_lstaddend(t_list **alst, t_list *new_lst);
 void			ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
