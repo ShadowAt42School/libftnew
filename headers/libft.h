@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/11/07 17:35:19 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/11/16 19:47:00 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,29 @@
 /*
 ** Type defs
 */
-typedef	unsigned char	t_byte;
-typedef unsigned char	t_bool;
+typedef	unsigned char			t_byte;
+typedef unsigned char			t_bool;
+typedef	int64_t					t_binary64;
+
+typedef struct	s_binary32
+{
+	int32_t						binary32;
+	unsigned char				sign;
+	uint8_t						exponent;
+	uint32_t					mantisa;
+}				t_binary32;
+
+union				u_binary32 {
+	float						floating;
+	double						doubling;
+	unsigned int				integer;
+};
 
 typedef struct	s_list
 {
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
+	void						*content;
+	size_t						content_size;
+	struct s_list				*next;
 }				t_list;
 /*
 ** Pre-Def values
@@ -40,6 +55,10 @@ typedef struct	s_list
 # define ULLINT_MAX_S "18446744073709551615"
 # define TRUE 1
 # define FALSE 0
+
+# define B_BIAS 127
+# define EXPONENT 8
+# define MANTISA 24
 
 /*
 ** Casts
@@ -210,5 +229,10 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list			*ft_lstfrem(t_list **head);
 t_list			*ft_lstlrem(t_list *head);
 t_list			*ft_lstanydel(t_list *head, t_list *nd);
+
+/*
+** Real numbers
+*/
+void			ft_binary32(float value, t_binary32 *fmt);
 
 #endif
