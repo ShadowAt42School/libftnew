@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_binary32.c                                      :+:      :+:    :+:   */
+/*   ft_dtos.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/11 20:59:13 by maghayev          #+#    #+#             */
-/*   Updated: 2019/11/16 19:48:04 by maghayev         ###   ########.fr       */
+/*   Created: 2019/11/24 17:23:46 by maghayev          #+#    #+#             */
+/*   Updated: 2019/11/24 22:30:51 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 #include <stdio.h>
+#include <math.h>
 
-void	ft_binary32(float value, t_binary32 *fmt)
+char	*ft_dtos(double value, unsigned int precision)
 {
-	union u_binary32	b32_rep;
+	t_binary64		b64;
+	t_double_s		double_s;
+	unsigned int	counter;
 
-	b32_rep.floating = value;
-
-	unsigned int temp = (int)b32_rep.floating;
-	for( unsigned long i = 0; i < sizeof(float) * 8; i++ ) {
-		printf("%d", temp & 0x1);
-		temp = temp >> 1;
-	}
-	if (value < 0)
-	{
-		fmt->sign = 1;
-	}
+	precision = 0;
+	counter = 0;
+	ft_bzero(&b64, sizeof(t_binary64));
+	ft_bzero(&double_s, sizeof(t_double_s));
+	ft_binary64(value, &b64);
+	double_s.intrep = (int64_t)b64.actual;
+	ft_itoa_base((char*)double_s.intreps, &double_s.intrep, 10, TRUE);
+	double_s.afterdot = b64.actual - (double)double_s.intrep;
+	return ("");
 }

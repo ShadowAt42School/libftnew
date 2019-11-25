@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/11/16 19:47:00 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/11/24 21:13:58 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,27 @@
 */
 typedef	unsigned char			t_byte;
 typedef unsigned char			t_bool;
-typedef	int64_t					t_binary64;
 
-typedef struct	s_binary32
-{
-	int32_t						binary32;
-	unsigned char				sign;
-	uint8_t						exponent;
-	uint32_t					mantisa;
-}				t_binary32;
-
-union				u_binary32 {
-	float						floating;
+union			u_binary64 {
 	double						doubling;
-	unsigned int				integer;
+	uint64_t					integer;
 };
+
+typedef struct	s_binary64
+{
+	unsigned char				sign;
+	uint16_t					exponent;
+	uint64_t					mantisa;
+	double						actual;
+}				t_binary64;
+
+typedef struct	s_double_s
+{
+	char						intreps[30];
+	char						floatreps[100];
+	int64_t						intrep;
+	double						afterdot;
+}				t_double_s;
 
 typedef struct	s_list
 {
@@ -52,13 +58,13 @@ typedef struct	s_list
 # define INT_MAX_STR 	"2147483647"
 # define LLINT_MIN_S 	"-9223372036854775808"
 # define LLINT_MAX_S 	"9223372036854775807"
-# define ULLINT_MAX_S "18446744073709551615"
-# define TRUE 1
-# define FALSE 0
+# define ULLINT_MAX_S	"18446744073709551615"
+# define TRUE			1
+# define FALSE			0
 
-# define B_BIAS 127
-# define EXPONENT 8
-# define MANTISA 24
+# define B_BIAS			1023
+# define EXPONENT		8
+# define MANTISA		23
 
 /*
 ** Casts
@@ -211,7 +217,7 @@ int				ft_isalnum(int c);
 **	Math
 */
 int				ft_floorsqrt(int toroot);
-int				ft_pow(int num1, int power);
+int64_t			ft_pow(int64_t num1, int power);
 unsigned int	ft_numlen(void *number, t_bool is_signed);
 
 /*
@@ -233,6 +239,7 @@ t_list			*ft_lstanydel(t_list *head, t_list *nd);
 /*
 ** Real numbers
 */
-void			ft_binary32(float value, t_binary32 *fmt);
+void			ft_binary64(double value, t_binary64 *fmt);
+char			*ft_dtos(double value, unsigned int precision);
 
 #endif
