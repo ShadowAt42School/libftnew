@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dtos.c                                          :+:      :+:    :+:   */
+/*   ft_ldtos.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 17:23:46 by maghayev          #+#    #+#             */
-/*   Updated: 2019/11/27 02:31:14 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/11/27 02:10:15 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ static char	*prepare_nullable_resp(char *buff, size_t ndigits)
 	*(buff + 1) = '.';
 	while (counter < ndigits && (*(buff + 2 + counter) = '0'))
 		counter++;
-	*(buff + counter + 2) = '\0';
+	*(buff + counter) = '\0';
 	return (buff);
 }
 
-static char	*build_decimal(unsigned long long int number,
+static char	*build_decimal(__uint128_t number,
 	size_t ndigits,
 	char *buff)
 {
@@ -42,12 +42,13 @@ static char	*build_decimal(unsigned long long int number,
 	return (buff);
 }
 
-size_t		ft_dtos(double number, size_t ndigit, t_bool is_dot, char *buff)
+size_t		ft_ldtos(
+				long double number, size_t ndigit, t_bool is_dot, char *buff)
 {
 	t_binary64				fmt;
 	size_t					flen;
-	double					digiter;
-	double					ndecimal;
+	long double				digiter;
+	long double				ndecimal;
 	unsigned long long int	magnitude;
 
 	ft_binary64(number, &fmt);

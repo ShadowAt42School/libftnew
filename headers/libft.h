@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/11/24 21:13:58 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/11/27 02:19:34 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdint.h>
 
 /*
 ** Type defs
@@ -34,7 +35,22 @@ typedef struct	s_binary64
 	uint16_t					exponent;
 	uint64_t					mantisa;
 	double						actual;
+	unsigned long long int		fullpart;
 }				t_binary64;
+
+union			u_binary128 {
+	double						doubling;
+	__uint128_t					integer;
+};
+
+typedef struct	s_binary128
+{
+	unsigned char				sign;
+	uint16_t					exponent;
+	__uint128_t					mantisa;
+	long double					actual;
+	__uint128_t					fullpart;
+}				t_binary128;
 
 typedef struct	s_double_s
 {
@@ -218,6 +234,8 @@ int				ft_isalnum(int c);
 */
 int				ft_floorsqrt(int toroot);
 int64_t			ft_pow(int64_t num1, int power);
+double			ft_dpow(double num1, int power);
+long double		ft_ldpow(long double num1, int power);
 unsigned int	ft_numlen(void *number, t_bool is_signed);
 
 /*
@@ -240,6 +258,9 @@ t_list			*ft_lstanydel(t_list *head, t_list *nd);
 ** Real numbers
 */
 void			ft_binary64(double value, t_binary64 *fmt);
-char			*ft_dtos(double value, unsigned int precision);
-
+void			ft_binary128(long double value, t_binary128 *fmt);
+size_t			ft_dtos(
+					double number, size_t ndigit, t_bool is_dot, char *buff);
+size_t			ft_ldtos(
+				long double number, size_t ndigit, t_bool is_dot, char *buff);
 #endif
