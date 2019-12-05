@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 17:23:46 by maghayev          #+#    #+#             */
-/*   Updated: 2019/11/27 02:31:14 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/03 22:46:47 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,17 @@ size_t		ft_dtos(double number, size_t ndigit, t_bool is_dot, char *buff)
 	if (!number)
 		return (ft_strlen(prepare_nullable_resp(buff, ndigit)));
 	digiter = ft_dpow(10, ndigit);
-	*buff = fmt.sign ? '-' : '\0';
 	fmt.fullpart = fmt.actual + 0.1 / digiter;
-	flen = ft_itoa_base(buff + fmt.sign, &fmt.fullpart, 10, FALSE);
-	flen += fmt.sign ? 1 : 0;
-	if (ndigit > 0 || (ndigit == 0 && is_dot))
-		*(buff + flen) = '.';
+	flen = ft_numlen(&fmt.fullpart, FALSE) + fmt.sign;
+	*buff = fmt.sign ? '-' : '\0';
+	if ((ndigit > 0 || (ndigit == 0 && is_dot)) && (*(buff + flen) = '.'))
+		flen += 1;
 	ndecimal = fmt.actual - fmt.fullpart;
 	if (ndigit > 0)
 	{
 		magnitude = (ndecimal * digiter) + 0.5;
-		build_decimal(magnitude, ndigit, buff + flen + 1);
+		build_decimal(magnitude, ndigit, buff + flen);
 	}
-	return (ft_strlen(buff));
+	ft_itoa_base(buff + fmt.sign, &fmt.fullpart, 10, FALSE);
+	return (ft_strlen(buff + fmt.sign));
 }
