@@ -36,12 +36,12 @@ int				ft_memcmp(const void *str1, const void *str2, size_t n)
 {
 	while (n)
 	{
-		if (n >= LIS)
+		if (n >= sizeof(t_lint))
 		{
 			if ((*(long int*)str1) != (*(long int*)str2))
-				return (calc_difference(LINTP(str1), LINTP(str2), LIS));
-			str1 += (n -= LIS) ? LIS : LIS;
-			str2 += LIS;
+				return (calc_difference(LINTP(str1), LINTP(str2), sizeof(t_lint)));
+			str1 += (n -= sizeof(t_lint)) ? sizeof(t_lint) : sizeof(t_lint);
+			str2 += sizeof(t_lint);
 		}
 		else if (n >= IS)
 		{

@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 01:06:36 by maghayev          #+#    #+#             */
-/*   Updated: 2017/12/07 01:25:47 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/10 19:09:26 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_isdigit(int c)
 {
-	return (IS_DIGIT(c));
+	return (c >= 48 && c <= 57 ? TRUE : FALSE);
 }

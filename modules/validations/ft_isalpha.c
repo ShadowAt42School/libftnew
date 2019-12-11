@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 01:25:31 by maghayev          #+#    #+#             */
-/*   Updated: 2017/12/07 01:25:35 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/10 19:12:45 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_isalpha(int c)
 {
-	return (IS_ALPHA(c));
+	return (ft_isupper(c) || ft_islower(c));
 }

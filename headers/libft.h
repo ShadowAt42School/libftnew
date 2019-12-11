@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/11/07 17:35:19 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/10 19:19:55 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,29 @@
 */
 typedef	unsigned char	t_byte;
 typedef unsigned char	t_bool;
+
+typedef char *						t_chrp;
+typedef short int *					t_sintp;
+typedef int *						t_intp;
+typedef long int *					t_lintp;
+typedef long long int *				t_llintp;
+typedef unsigned char *				t_uchrp;
+typedef unsigned short int *		t_ushintp;
+typedef unsigned int *				t_uintp;
+typedef unsigned long int *			t_ulintp;
+typedef unsigned long long int *	t_ullintp;
+typedef char						t_chr;
+typedef short int					t_shint;
+typedef int							t_int;
+typedef long int					t_lint;
+typedef long long int				t_llint;
+typedef unsigned char				t_uchr;
+typedef unsigned short int			t_ushint;
+typedef unsigned int				t_uint;
+typedef unsigned long int			t_ulint;
+typedef unsigned long long int		t_ullint;
+typedef double						t_dbl;
+typedef long double					t_ldbl;
 
 typedef struct	s_list
 {
@@ -42,63 +65,9 @@ typedef struct	s_list
 # define FALSE 0
 
 /*
-** Casts
-** Macroses Part 1
-*/
-# define CHRP(x) ((char*)x)
-# define SINTP(x) ((short int*)x)
-# define INTP(x) ((int*)x)
-# define LINTP(x) ((long int*)x)
-# define LLINTP(x) ((long long int*)x)
-# define UCHRP(x) ((unsigned char*)x)
-# define USHINTP(x) ((unsigned short int*)x)
-# define UINTP(x) ((unsigned int*)x)
-# define ULINTP(x) ((unsigned long int*)x)
-# define ULLINTP(x) ((unsigned long long int*)x)
-# define CHRD(x) ((char)x)
-# define SHINTD(x) ((short int)x)
-# define INTD(x) ((int)x)
-# define LINTD(x) ((long int)x)
-# define LLINTD(x) ((long long int)x)
-# define UCHRD(x) ((unsigned char)x)
-# define USHINTD(x) ((unsigned short int)x)
-# define UINTD(x) ((unsigned int)x)
-# define ULINTD(x) ((unsigned long int)x)
-# define ULLINTD(x) ((unsigned long long int)x)
-# define DOUBLE(x) ((double)x)
-# define LDOUBLE(x) ((long double)x)
-
-/*
 ** Sizes
 ** Macroses Part 2
 */
-# define LLIS sizeof(long long int)
-# define LIS sizeof(long int)
-# define LS sizeof(long)
-# define IS sizeof(int)
-# define SIS sizeof(short int)
-# define CS sizeof(char)
-# define PS sizeof(char*)
-
-/*
-** Logic Based Actions
-** Macroses
-*/
-# define ABS(x) (x < 0 ? -x : x)
-# define SPACES(x) (x == '\v' || x == '\r' || x == '\f' || SPACES2(x))
-# define SPACES2(x) (x == '\t' || x == ' ' || x == '\n')
-
-/*
-** C Type Checks
-** Macroses
-*/
-# define IS_DIGIT(x) (x >= 48 && x <= 57 ? TRUE : FALSE)
-# define IS_UPPER(x) (x >= 65 && x <= 90 ? TRUE : FALSE)
-# define IS_LOWER(x) (x >= 97 && x <= 122 ? TRUE : FALSE)
-# define IS_ALPHA(x) ((IS_UPPER(x) || IS_LOWER(x)) ? TRUE : FALSE)
-# define IS_ALNUM(x) (IS_ALPHA(x) || IS_DIGIT(x) ? TRUE : FALSE)
-# define IS_PRINT(x) (x >= 32 && x <= 126 ? TRUE : FALSE)
-# define IS_NONPRINT(x) ((x >= 0 && x <= 31) || x == 127 ? TRUE : FALSE)
 
 /*
 **	Strings
@@ -182,11 +151,14 @@ void			*ft_memshrink(void *area, void *start, size_t len);
 /*
 **	C Type Checks
 */
-int				ft_isdigit(int c);
-int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_isalnum(int c);
+int				ft_isdigit(int c);
+int				ft_isalpha(int c);
+int				ft_isupper(int c);
+int				ft_islower(int c);
+int				ft_isspace(int c, t_bool is_short);
 
 /*
 **	Math
@@ -194,6 +166,9 @@ int				ft_isalnum(int c);
 int				ft_floorsqrt(int toroot);
 int				ft_pow(int num1, int power);
 unsigned int	ft_numlen(void *number, t_bool is_signed);
+int				ft_abs(int x);
+t_lint			ft_labs(t_lint x);
+t_llint			ft_llabs(t_llint x);
 
 /*
 ** Lists

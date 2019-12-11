@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 20:55:28 by maghayev          #+#    #+#             */
-/*   Updated: 2019/10/06 00:25:15 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/10 19:21:20 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ unsigned int	ft_numlen(void *number, t_bool is_signed)
 	llin = 0;
 	ullin = 0;
 	if (is_signed)
-		llin = *LLINTP(number);
+		llin = *(t_llintp)(number);
 	else
-		ullin = *ULLINTP(number);
+		ullin = *(t_ullintp)(number);
 	if (llin == LLONG_MIN || llin == LLONG_MAX)
 		return (length = 20);
 	if (llin == 0 && ullin == 0)
