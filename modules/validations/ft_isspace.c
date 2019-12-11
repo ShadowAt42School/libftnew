@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 01:42:47 by maghayev          #+#    #+#             */
-/*   Updated: 2019/12/10 19:13:13 by maghayev         ###   ########.fr       */
+/*   Created: 2017/12/07 01:35:20 by maghayev          #+#    #+#             */
+/*   Updated: 2019/12/10 19:17:22 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-int		ft_isalnum(int c)
+int		ft_isspace(int c, t_bool is_short)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	if (is_short)
+		return (c == '\t' || c == ' ' || c == '\n');
+	return (c == '\v' || c == '\r' || c == '\f' || c == '\t' || c == ' ' ||
+																	c == '\n');
 }

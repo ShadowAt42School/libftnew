@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_llabs.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 01:42:47 by maghayev          #+#    #+#             */
-/*   Updated: 2019/12/10 19:13:13 by maghayev         ###   ########.fr       */
+/*   Created: 2019/12/10 19:05:20 by maghayev          #+#    #+#             */
+/*   Updated: 2019/12/10 19:21:00 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-int		ft_isalnum(int c)
+t_llint		ft_llabs(t_llint x)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	return (x < 0 ? -x : x);
 }

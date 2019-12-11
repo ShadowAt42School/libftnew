@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 19:34:43 by maghayev          #+#    #+#             */
-/*   Updated: 2018/01/04 20:37:51 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/10 19:17:52 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ char	*ft_strtrim(char const *s)
 		return (NULL);
 	s_len = ft_strlen(s);
 	s_reverse = s + s_len - 1;
-	while (SPACES2(*s))
+	while (ft_isspace(*s, TRUE))
 		s++;
 	if (!*s)
 		return (ft_strdup(""));
-	while (SPACES2(*s_reverse))
+	while (ft_isspace(*s_reverse, TRUE))
 		s_reverse--;
 	if (s_reverse < s)
 		return (NULL);

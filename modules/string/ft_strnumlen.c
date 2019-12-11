@@ -17,7 +17,7 @@ int		ft_strnumlen(char *str)
 	int		len;
 
 	len = 0;
-	while (IS_DIGIT(*str))
+	while (ft_isdigit(*str))
 	{
 		len++;
 		str++;
