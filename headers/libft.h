@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/12/10 19:19:55 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/10 19:25:45 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,7 @@ void			*ft_memshrink(void *area, void *start, size_t len);
 */
 int				ft_isascii(int c);
 int				ft_isprint(int c);
+int				ft_isnonprint(int c);
 int				ft_isalnum(int c);
 int				ft_isdigit(int c);
 int				ft_isalpha(int c);
