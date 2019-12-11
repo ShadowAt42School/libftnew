@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 22:01:30 by maghayev          #+#    #+#             */
-/*   Updated: 2019/12/10 19:18:18 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/10 22:10:53 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		ft_atoi(const char *str)
 {
 	long int	result;
 	int			sign;
+	const char	*strc;
 
 	result = 0;
 	sign = 1;
@@ -26,7 +27,10 @@ int		ft_atoi(const char *str)
 		sign = (*str == '-') ? -1 : 1;
 		str++;
 	}
-	while (ft_isdigit(*str))
-		result = result * 10 + *str++ - '0';
+	strc = str;
+	while (ft_isdigit(*strc) && (strc - str) < LLINT_S_L)
+		result = result * 10 + *strc++ - '0';
+	if ((strc - str) >= LLINT_S_L)
+		return (sign > 0 ? -1 : 0);
 	return (result * sign);
 }

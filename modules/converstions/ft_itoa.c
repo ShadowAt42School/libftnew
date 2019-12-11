@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 23:40:22 by maghayev          #+#    #+#             */
-/*   Updated: 2018/01/05 00:16:40 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/10 22:11:32 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char			*ft_itoa(int n)
 	int		d_count;
 
 	if (n == INT_MIN)
-		return (ft_strdup(INT_MIN_STR));
+		return (ft_strdup(INT_MIN_S));
 	if (!n)
 		return (ft_strdup("0"));
 	d_count = digit_counter(n);
