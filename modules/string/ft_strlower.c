@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_tolower.c                                   :+:      :+:    :+:   */
+/*   ft_strlower.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 22:48:26 by maghayev          #+#    #+#             */
-/*   Updated: 2019/10/06 22:51:37 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/10 21:44:35 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-void	ft_str_tolower(char *str)
+void	ft_strlower(char *str)
 {
 	while (*str && (*str = ft_tolower(*str)))
 		str++;

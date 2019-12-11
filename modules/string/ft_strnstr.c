@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 21:46:35 by maghayev          #+#    #+#             */
-/*   Updated: 2018/01/05 21:43:58 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/10 22:59:05 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 	const char	*pattern;
 	int			n_cpy;
 
+	if (n == 0)
+		return (!*little ? (char*)big : NULL);
 	if (*big == *little && *big == '\0')
 		return ((char *)big);
 	while (*big && n > 0)
