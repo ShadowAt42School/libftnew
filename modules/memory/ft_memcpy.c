@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/03 00:32:31 by maghayev          #+#    #+#             */
-/*   Updated: 2018/01/05 23:12:48 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/12 22:27:04 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static	void	*ft_memcpy_eng(void *str1, const void *str2, size_t n)
 
 void			*ft_memcpy(void *str1, const void *str2, size_t n)
 {
-	if (!str1 && !str2 && n == 0)
+	if ((!str1 && !str2) || n == 0)
 		return (ft_memcpy_eng(str1, str2, n));
 	if (!str1)
 		*(long int*)str1 = *(long int*)str1;
