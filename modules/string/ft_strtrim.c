@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 19:34:43 by maghayev          #+#    #+#             */
-/*   Updated: 2019/12/10 19:17:52 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/10 21:34:13 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,5 @@ char	*ft_strtrim(char const *s)
 	newstr = ft_strnew(logic_len);
 	if (!newstr)
 		return (NULL);
-	while (s_reverse != s)
-		*newstr++ = *s++;
-	return (newstr - logic_len);
+	return (ft_memcpy(newstr, s, logic_len));
 }

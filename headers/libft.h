@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/12/10 23:39:07 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/12 22:32:53 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,14 @@ typedef struct	s_list
 ** Pre-Def values
 ** Macroses Part 0
 */
-# define INT_MIN_STR 	"-2147483648"
-# define INT_MAX_STR 	"2147483647"
+# define INT_MIN_S 		"-2147483648"
+# define INT_MAX_S 		"2147483647"
+# define INT_S_L		10
 # define LLINT_MIN_S 	"-9223372036854775808"
 # define LLINT_MAX_S 	"9223372036854775807"
-# define ULLINT_MAX_S "18446744073709551615"
+# define LLINT_S_L		19
+# define ULLINT_MAX_S	"18446744073709551615"
+# define ULLINT_S_L		20
 # define TRUE 1
 # define FALSE 0
 
@@ -79,6 +82,7 @@ char			*ft_strncpy(char *dst, const char *src, size_t len);
 char			*ft_strcat(char *dest, const char *src);
 char			*ft_strncat(char *dest, const char *src, size_t n);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 char			*ft_strchr(const char *str, int c);
 char			*ft_strrchr(const char *str, int c);
@@ -98,6 +102,7 @@ int				ft_strnequ(char const *s1, char const *s2, size_t n);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
+char			**ft_split(char const *s, char c);
 int				ft_strwordsdelim(const char *str, char delim);
 int				ft_strlendelim(const char *str, char delim);
 char			*ft_strdupdelim(const char *s1, char delim);
@@ -111,7 +116,8 @@ int				ft_strdelim(char **dest, const char *s1, char delim);
 */
 int				ft_toupper(int c);
 int				ft_tolower(int c);
-void			ft_str_tolower(char *str);
+void			ft_strlower(char *str);
+void			ft_strupper(char *str);
 int				ft_atoi(const char *str);
 char			*ft_itoa(int n);
 unsigned int	ft_itoa_base(
@@ -133,20 +139,21 @@ void			ft_putnbr_fd(int n, int fd);
 /*
 **	Memmory
 */
-void			ft_bzero(void *s, size_t n);
-void			*ft_memcpy(void *str1, const void *str2, size_t n);
-void			*ft_memset(void *str, int c, size_t n);
-void			*ft_memccpy(void *s1, const void *s2, int c, size_t n);
-void			*ft_memchr(const void *str, int c, size_t n);
-void			*ft_memmove(void *dest, const void *src, size_t n);
-int				ft_memcmp(const void *str1, const void *str2, size_t n);
 void			*ft_memalloc(size_t size);
-void			ft_memdel(void **ap);
+void			*ft_calloc(size_t nmemb, size_t size);
 void			*ft_memrealloc(
 							void *content, size_t cur_size, size_t des_size);
 void			*ft_memjoin(void *sh, const void *sn, size_t shl, size_t snh);
 void			*ft_memdup(const void *cont, size_t size);
 void			*ft_memshrink(void *area, void *start, size_t len);
+void			ft_bzero(void *s, size_t n);
+void			*ft_memcpy(void *str1, const void *str2, size_t n);
+void			*ft_memccpy(void *s1, const void *s2, int c, size_t n);
+void			*ft_memset(void *str, int c, size_t n);
+void			*ft_memmove(void *dest, const void *src, size_t n);
+void			*ft_memchr(const void *str, int c, size_t n);
+int				ft_memcmp(const void *str1, const void *str2, size_t n);
+void			ft_memdel(void **ap);
 
 /*
 **	C Type Checks
