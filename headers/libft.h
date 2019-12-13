@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/12/12 22:32:53 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/12 22:42:30 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ typedef struct	s_list
 /*
 **	Strings
 */
-long long int	ft_strlen(const char *s);
+size_t			ft_strlen(const char *s);
 char			*ft_strdup(const char *s1);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strncpy(char *dst, const char *src, size_t len);
