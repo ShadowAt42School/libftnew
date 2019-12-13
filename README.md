@@ -1,29 +1,30 @@
-# README #
+TO DO
+rewrites
+----------
+ft_strlcat - make changes to how copy is used. use mem operations _
+ft_strtrim _
+ft_strcpy - change how copy is done. use mem ops.
+ft_strncpy - change how copy is done. use mem ops.
+ft_strcat - change how copy is done. use mem ops.
+ft_strtrimdelim - rewrite how we copy
+	look through all delim functions
 
-This README would normally document whatever steps are necessary to get your application up and running.
+@@@@@@@@@@
+----------
+----------
+@@@@@@@@@@
 
-### What is this repository for? ###
+think about
+----------
+ft_strnstr
+ft_strncat
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+@@@@@@@@@@
+----------
+----------
+@@@@@@@@@@
 
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+fix
+----------
+ft_strjoin
+ft_strmapi

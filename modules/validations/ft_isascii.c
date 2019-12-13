@@ -14,5 +14,5 @@
 
 int		ft_isascii(int c)
 {
-	return (IS_PRINT(c) || IS_NONPRINT(c));
+	return (ft_isprint(c) || ft_isnonprint(c));
 }

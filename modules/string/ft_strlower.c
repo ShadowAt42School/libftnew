@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlower.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 01:42:47 by maghayev          #+#    #+#             */
-/*   Updated: 2019/12/10 19:13:13 by maghayev         ###   ########.fr       */
+/*   Created: 2019/10/06 22:48:26 by maghayev          #+#    #+#             */
+/*   Updated: 2019/12/10 21:44:35 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-int		ft_isalnum(int c)
+void	ft_strlower(char *str)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	while (*str && (*str = ft_tolower(*str)))
+		str++;
 }
