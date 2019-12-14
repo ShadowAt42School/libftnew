@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/12/12 22:45:24 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/14 05:53:45 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,48 +17,6 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <stdint.h>
-
-/*
-** Type defs
-*/
-typedef	unsigned char			t_byte;
-typedef unsigned char			t_bool;
-
-union			u_binary64 {
-	double						doubling;
-	uint64_t					integer;
-};
-
-typedef struct	s_binary64
-{
-	unsigned char				sign;
-	uint16_t					exponent;
-	uint64_t					mantisa;
-	double						actual;
-	unsigned long long int		fullpart;
-}				t_binary64;
-
-union			u_binary128 {
-	double						doubling;
-	__uint128_t					integer;
-};
-
-typedef struct	s_binary128
-{
-	unsigned char				sign;
-	uint16_t					exponent;
-	__uint128_t					mantisa;
-	long double					actual;
-	__uint128_t					fullpart;
-}				t_binary128;
-
-typedef struct	s_double_s
-{
-	char						intreps[30];
-	char						floatreps[100];
-	int64_t						intrep;
-	double						afterdot;
-}				t_double_s;
 
 typedef char *						t_chrp;
 typedef short int *					t_sintp;
@@ -82,6 +40,48 @@ typedef unsigned long int			t_ulint;
 typedef unsigned long long int		t_ullint;
 typedef double						t_dbl;
 typedef long double					t_ldbl;
+
+/*
+** Type defs
+*/
+typedef	unsigned char			t_byte;
+typedef unsigned char			t_bool;
+
+union			u_binary64 {
+	double						doubling;
+	uint64_t					integer;
+};
+
+typedef struct	s_binary64
+{
+	unsigned char				sign;
+	uint16_t					exponent;
+	uint64_t					mantisa;
+	double						actual;
+	t_ullint					fullpart;
+}				t_binary64;
+
+union			u_binary128 {
+	long double					doubling;
+	__uint128_t					integer;
+};
+
+typedef struct	s_binary128
+{
+	unsigned char				sign;
+	uint16_t					exponent;
+	__uint128_t					mantisa;
+	long double					actual;
+	t_ullint					fullpart;
+}				t_binary128;
+
+typedef struct	s_double_s
+{
+	char						intreps[30];
+	char						floatreps[100];
+	int64_t						intrep;
+	double						afterdot;
+}				t_double_s;
 
 typedef struct	s_list
 {

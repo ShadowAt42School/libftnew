@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 18:13:14 by maghayev          #+#    #+#             */
-/*   Updated: 2019/11/27 01:43:31 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/14 05:17:50 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ void				ft_binary64(double value, t_binary64 *fmt)
 	fmt->exponent = (uint16_t)bit_extracted(b32_rep.integer, 53, 11);
 	fmt->mantisa = bit_extracted(b32_rep.integer, 1, 52);
 	fmt->actual = ((1 + fmt->mantisa * 1.0 / ft_dpow(2, 52)) *
-										ft_dpow(2, (fmt->exponent - B_BIAS)));
-	fmt->fullpart = (unsigned long long int)fmt->actual;
+										ft_dpow(2, (fmt->exponent - 1023)));
+	fmt->fullpart = (long long int)fmt->actual;
 }
