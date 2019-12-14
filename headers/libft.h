@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2019/12/12 22:42:30 by maghayev         ###   ########.fr       */
+/*   Updated: 2019/12/14 05:53:45 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-
-/*
-** Type defs
-*/
-typedef	unsigned char	t_byte;
-typedef unsigned char	t_bool;
+# include <stdint.h>
 
 typedef char *						t_chrp;
 typedef short int *					t_sintp;
@@ -46,11 +41,53 @@ typedef unsigned long long int		t_ullint;
 typedef double						t_dbl;
 typedef long double					t_ldbl;
 
+/*
+** Type defs
+*/
+typedef	unsigned char			t_byte;
+typedef unsigned char			t_bool;
+
+union			u_binary64 {
+	double						doubling;
+	uint64_t					integer;
+};
+
+typedef struct	s_binary64
+{
+	unsigned char				sign;
+	uint16_t					exponent;
+	uint64_t					mantisa;
+	double						actual;
+	t_ullint					fullpart;
+}				t_binary64;
+
+union			u_binary128 {
+	long double					doubling;
+	__uint128_t					integer;
+};
+
+typedef struct	s_binary128
+{
+	unsigned char				sign;
+	uint16_t					exponent;
+	__uint128_t					mantisa;
+	long double					actual;
+	t_ullint					fullpart;
+}				t_binary128;
+
+typedef struct	s_double_s
+{
+	char						intreps[30];
+	char						floatreps[100];
+	int64_t						intrep;
+	double						afterdot;
+}				t_double_s;
+
 typedef struct	s_list
 {
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
+	void						*content;
+	size_t						content_size;
+	struct s_list				*next;
 }				t_list;
 /*
 ** Pre-Def values
@@ -172,7 +209,9 @@ int				ft_isspace(int c, t_bool is_short);
 **	Math
 */
 int				ft_floorsqrt(int toroot);
-int				ft_pow(int num1, int power);
+int64_t			ft_pow(int64_t num1, int power);
+double			ft_dpow(double num1, int power);
+long double		ft_ldpow(long double num1, int power);
 unsigned int	ft_numlen(void *number, t_bool is_signed);
 int				ft_abs(int x);
 t_lint			ft_labs(t_lint x);
@@ -194,4 +233,13 @@ t_list			*ft_lstfrem(t_list **head);
 t_list			*ft_lstlrem(t_list *head);
 t_list			*ft_lstanydel(t_list *head, t_list *nd);
 
+/*
+** Real numbers
+*/
+void			ft_binary64(double value, t_binary64 *fmt);
+void			ft_binary128(long double value, t_binary128 *fmt);
+size_t			ft_dtos(
+					double number, size_t ndigit, t_bool is_dot, char *buff);
+size_t			ft_ldtos(
+				long double number, size_t ndigit, t_bool is_dot, char *buff);
 #endif
