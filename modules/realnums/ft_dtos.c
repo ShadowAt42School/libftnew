@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/libft.h"
+#include "libft.h"
 #include <stdio.h>
 
 size_t		prepare_nullable_resp(char *buff, size_t ndigits, t_bool is_sign)

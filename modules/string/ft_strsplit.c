@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/libft.h"
+#include "libft.h"
 
 static char		**ft_strsplit_eng(char const *trimed, int words, char delim)
 {

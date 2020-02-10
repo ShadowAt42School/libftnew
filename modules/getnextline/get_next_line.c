@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/get_next_line.h"
+#include "get_next_line.h"
 
 t_bool		clean_up(t_linemeta *lnmeta)
 {

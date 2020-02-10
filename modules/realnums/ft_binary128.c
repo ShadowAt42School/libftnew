@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/libft.h"
+#include "libft.h"
 
 static __uint128_t		bit_extracted(__uint128_t number, int start, int count)
 {

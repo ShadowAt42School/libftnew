@@ -6,11 +6,11 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 22:01:30 by maghayev          #+#    #+#             */
-/*   Updated: 2019/12/10 22:10:53 by maghayev         ###   ########.fr       */
+/*   Updated: 2020/02/09 20:53:37 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/libft.h"
+#include "libft.h"
 
 int		ft_atoi(const char *str)
 {

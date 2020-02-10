@@ -6,11 +6,11 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 20:38:44 by maghayev          #+#    #+#             */
-/*   Updated: 2019/12/14 05:34:01 by maghayev         ###   ########.fr       */
+/*   Updated: 2020/02/09 20:52:58 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/libft.h"
+#include "libft.h"
 
 long double		ft_ldpow(long double num1, int power)
 {
