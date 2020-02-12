@@ -6,7 +6,7 @@
 #    By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/01 21:51:41 by maghayev          #+#    #+#              #
-#    Updated: 2020/02/09 21:40:53 by maghayev         ###   ########.fr        #
+#    Updated: 2020/02/09 23:33:49 by maghayev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -18,13 +18,12 @@ PURPLE = "\033[35m\c"
 NC="\033[0m\c"
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-DEPS = headers/libft.h headers/get_next_line.h
 SRC  = $(wildcard modules/*/*.c)
 LIBA = -Iheaders/
 
 OBJECT = $(SRC:.c=.o)
 
-%.o: %.c $(DEPS)
+%.o: %.c
 	@echo $(PURPLE)
 	$(CC) $(CFLAGS) $(LIBA) -g -c -o $@ $<
 	@echo $(NC)
