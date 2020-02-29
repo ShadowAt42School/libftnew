@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2020/02/22 23:02:23 by maghayev         ###   ########.fr       */
+/*   Updated: 2020/02/29 02:47:53 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -243,4 +243,11 @@ size_t			ft_dtos(
 					double number, size_t ndigit, t_bool is_dot, char *buff);
 size_t			ft_ldtos(
 				long double number, size_t ndigit, t_bool is_dot, char *buff);
+
+/*
+**	Array
+*/
+t_bool			ft_in_array(const void *needle, const void *array,
+												size_t blk_size, size_t size);
+
 #endif
