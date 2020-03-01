@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2020/02/29 02:47:53 by maghayev         ###   ########.fr       */
+/*   Updated: 2020/02/29 19:56:21 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,6 +217,8 @@ unsigned int	ft_numlen(void *number, t_bool is_signed);
 int				ft_abs(int x);
 t_lint			ft_labs(t_lint x);
 t_llint			ft_llabs(t_llint x);
+t_llint			ft_max(t_llint chalenger, t_llint champion);
+t_ullint		ft_umax(t_ullint chalenger, t_ullint champion);
 
 /*
 ** Lists
