@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2020/02/29 19:56:21 by maghayev         ###   ########.fr       */
+/*   Updated: 2020/03/01 22:09:27 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -251,5 +251,11 @@ size_t			ft_ldtos(
 */
 t_bool			ft_in_array(const void *needle, const void *array,
 												size_t blk_size, size_t size);
+
+/*
+**	Sorting
+*/
+void			ft_list_bubble_sort(t_list **list,
+												t_bool (comp)(void *, void *));
 
 #endif
