@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 20:53:22 by maghayev          #+#    #+#             */
-/*   Updated: 2020/03/01 22:35:05 by maghayev         ###   ########.fr       */
+/*   Updated: 2020/03/04 23:52:14 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ static void	swap(t_list *item1, t_list *item2)
 	item2->content = tmp;
 }
 
-void		ft_list_bubble_sort(t_list **list, t_bool (comp)(void *, void *))
+void		ft_list_bubble_sort(
+	t_list **list,
+	t_bool is_rev,
+	t_bool (comp)(void *, void *, t_bool))
 {
 	t_list	*parse;
 	t_list	*inner;
@@ -34,7 +37,7 @@ void		ft_list_bubble_sort(t_list **list, t_bool (comp)(void *, void *))
 		inner = *list;
 		while (inner && inner->next != upto)
 		{
-			if (comp(inner->content, inner->next->content))
+			if (comp(inner->content, inner->next->content, is_rev))
 				swap(inner, inner->next);
 			inner = inner->next;
 		}

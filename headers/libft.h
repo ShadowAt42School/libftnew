@@ -6,7 +6,7 @@
 /*   By: maghayev <maghayev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 20:18:02 by maghayev          #+#    #+#             */
-/*   Updated: 2020/03/01 22:09:27 by maghayev         ###   ########.fr       */
+/*   Updated: 2020/03/04 23:52:08 by maghayev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -256,6 +256,6 @@ t_bool			ft_in_array(const void *needle, const void *array,
 **	Sorting
 */
 void			ft_list_bubble_sort(t_list **list,
-												t_bool (comp)(void *, void *));
+						t_bool is_rev, t_bool (comp)(void *, void *, t_bool));
 
 #endif
